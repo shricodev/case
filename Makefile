@@ -19,3 +19,6 @@ test-verbose:
 
 clean:
 	rm -f ./${BIN_DIR}/${BINARY}
+
+tidy:
+	go mod tidy

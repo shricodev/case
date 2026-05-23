@@ -4,11 +4,7 @@ import (
 	"os"
 
 	"github.com/spf13/cobra"
-
-	"github.com/shricodev/case/internal/app"
 )
-
-var opts app.Options
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{

@@ -6,6 +6,8 @@ import (
 	"github.com/shricodev/case/internal/app"
 )
 
+var opts app.Options
+
 func addRenameFlags(cmd *cobra.Command, opts *app.Options) {
 	cmd.Flags().
 		BoolVarP(&opts.DryRun, "dry-run", "n", false, "show what would be renamed without changing anything")
