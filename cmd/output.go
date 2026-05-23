@@ -27,7 +27,7 @@ func printResult(w io.Writer, result app.Result) error {
 		msg := messageForStatus(item.Status)
 
 		if item.Status == app.StatusFailed && item.Error != nil {
-			_, err := fmt.Fprintf(w, "%s  %s: %v\n", msg, item.OldPath, item.Error)
+			_, err := fmt.Fprintf(w, "%s %s: %v\n", msg, item.OldPath, item.Error)
 			if err != nil {
 				return err
 			}

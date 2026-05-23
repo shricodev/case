@@ -6,9 +6,7 @@ import (
 	"github.com/shricodev/case/internal/app"
 )
 
-var opts app.Options
-
-func addRenameFlags(cmd *cobra.Command) {
+func addRenameFlags(cmd *cobra.Command, opts *app.Options) {
 	cmd.Flags().
 		BoolVarP(&opts.DryRun, "dry-run", "n", false, "show what would be renamed without changing anything")
 	cmd.Flags().
@@ -18,5 +16,5 @@ func addRenameFlags(cmd *cobra.Command) {
 	cmd.Flags().
 		BoolVar(&opts.PreserveExt, "preserve-extension", true, "preserve file extensions when renaming files")
 	cmd.Flags().
-		StringVar((*string)(&opts.Target), "target", "dirs", "what to renamme: dirs, files, or all")
+		StringVar((*string)(&opts.Target), "target", "dirs", "what to rename: dirs, files, or all")
 }

@@ -12,11 +12,11 @@ var lowerCmd = &cobra.Command{
 	Short: "Rename items to lowercase",
 	Args:  cobra.ExactArgs(1),
 	RunE: func(cmd *cobra.Command, args []string) error {
-		return runCaseCommand(app.Lower, args)
+		return runCaseCommand(cmd, app.ModeLower, args, opts)
 	},
 }
 
 func init() {
-	addRenameFlags(lowerCmd)
+	addRenameFlags(lowerCmd, &opts)
 	rootCmd.AddCommand(lowerCmd)
 }

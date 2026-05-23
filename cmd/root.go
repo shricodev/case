@@ -4,7 +4,11 @@ import (
 	"os"
 
 	"github.com/spf13/cobra"
+
+	"github.com/shricodev/case/internal/app"
 )
+
+var opts app.Options
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
@@ -20,17 +24,4 @@ func Execute() {
 	if err != nil {
 		os.Exit(1)
 	}
-}
-
-func init() {
-	rootCmd.PersistentFlags().
-		BoolVarP(&dryRun, "dry-run", "n", false, "show what would be renamed without changing anything")
-	rootCmd.PersistentFlags().
-		BoolVar(&includeHidden, "include-hidden", false, "include hidden files and directories")
-	rootCmd.PersistentFlags().
-		BoolVarP(&recursive, "recursive", "r", false, "rename recursively")
-	rootCmd.PersistentFlags().
-		BoolVar(&preserveExt, "preserve-extension", true, "preserve file extensions when renaming files")
-	rootCmd.PersistentFlags().
-		StringVar(&target, "target", "dirs", "what to renamme: dirs, files, or all")
 }

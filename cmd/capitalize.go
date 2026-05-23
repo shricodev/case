@@ -12,11 +12,11 @@ var capitalizeCmd = &cobra.Command{
 	Short: "Capitalize item names",
 	Args:  cobra.ExactArgs(1),
 	RunE: func(cmd *cobra.Command, args []string) error {
-		return runCaseCommand(app.Capitalize, args)
+		return runCaseCommand(cmd, app.ModeCapitalize, args, opts)
 	},
 }
 
 func init() {
-	addRenameFlags(capitalizeCmd)
+	addRenameFlags(capitalizeCmd, &opts)
 	rootCmd.AddCommand(capitalizeCmd)
 }

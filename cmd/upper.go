@@ -12,11 +12,11 @@ var upperCmd = &cobra.Command{
 	Short: "Rename items to uppercase",
 	Args:  cobra.ExactArgs(1),
 	RunE: func(cmd *cobra.Command, args []string) error {
-		return runCaseCommand(app.Upper, args)
+		return runCaseCommand(cmd, app.ModeUpper, args, opts)
 	},
 }
 
 func init() {
-	addRenameFlags(upperCmd)
+	addRenameFlags(upperCmd, &opts)
 	rootCmd.AddCommand(upperCmd)
 }
