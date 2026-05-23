@@ -1,0 +1,22 @@
+package cmd
+
+import (
+	"github.com/spf13/cobra"
+
+	"github.com/shricodev/case/internal/app"
+)
+
+// upperCmd represents the upper command
+var upperCmd = &cobra.Command{
+	Use:   "upper <path>",
+	Short: "Rename items to uppercase",
+	Args:  cobra.ExactArgs(1),
+	RunE: func(cmd *cobra.Command, args []string) error {
+		return runCaseCommand(app.Upper, args)
+	},
+}
+
+func init() {
+	addRenameFlags(upperCmd)
+	rootCmd.AddCommand(upperCmd)
+}

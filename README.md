@@ -1,25 +1,25 @@
 ## Plan
 
 ```bash
-dircase lower ./my-folder
-dircase upper ./my-folder
-dircase title ./my-folder
-dircase camel ./my-folder
+case lower ./my-folder
+case upper ./my-folder
+case title ./my-folder
+case camel ./my-folder
 
-dircase lower ./my-folder --recursive
-dircase lower ./my-folder --target dirs
-dircase lower ./my-folder --target files
-dircase lower ./my-folder --target all
-dircase lower ./my-folder --dry-run
+case lower ./my-folder --recursive
+case lower ./my-folder --target dirs
+case lower ./my-folder --target files
+case lower ./my-folder --target all
+case lower ./my-folder --dry-run
 ```
 
 For the first version, I’d keep it focused:
 
 ```bash
-dircase lower <path>
-dircase upper <path>
-dircase capitalize <path>
-dircase title <path>
+case lower <path>
+case upper <path>
+case capitalize <path>
+case title <path>
 ```
 
 Use flags like:
@@ -42,12 +42,12 @@ os.Rename  -> renaming
 strings    -> lower/upper/title-ish transforms
 ```
 
-Cobra is a solid choice for this kind of CLI because it is made for Git-style commands like `dircase lower` and `dircase upper`, and it is used by tools like Kubernetes, Hugo, and GitHub CLI. ([GitHub][1])
+Cobra is a solid choice for this kind of CLI because it is made for Git-style commands like `case lower` and `case upper`, and it is used by tools like Kubernetes, Hugo, and GitHub CLI. ([GitHub][1])
 
 Suggested project structure:
 
 ```txt
-dircase/
+case/
   cmd/
     root.go
     lower.go
@@ -119,24 +119,24 @@ type Options struct {
 I’d make the first release do this:
 
 ```bash
-dircase lower . --recursive --dry-run
-dircase lower . --recursive
-dircase upper ./packages --target dirs
-dircase capitalize ./content --target dirs
+case lower . --recursive --dry-run
+case lower . --recursive
+case upper ./packages --target dirs
+case capitalize ./content --target dirs
 ```
 
 And later you can add aliases:
 
 ```bash
-dircase l .
-dircase u .
-dircase cap .
+case l .
+case u .
+case cap .
 ```
 
 Tiny UX detail that would make it feel polished:
 
 ```bash
-dircase lower . -r --dry-run
+case lower . -r --dry-run
 ```
 
 Output:
@@ -153,7 +153,7 @@ DRY RUN
 
 My personal recommendation:
 
-Use **Cobra**, name the binary **`dircase`**, start with commands like **`lower`**, **`upper`**, **`capitalize`**, and keep `--target files|dirs|all` ready from day one. That way it starts as a directory tool but doesn’t paint you into a corner.
+Use **Cobra**, name the binary **`case`**, start with commands like **`lower`**, **`upper`**, **`capitalize`**, and keep `--target files|dirs|all` ready from day one. That way it starts as a directory tool but doesn’t paint you into a corner.
 
 [1]: https://github.com/spf13/cobra?utm_source=chatgpt.com "spf13/cobra: A Commander for modern Go CLI interactions"
 [2]: https://pkg.go.dev/path/filepath?utm_source=chatgpt.com "path/filepath"
