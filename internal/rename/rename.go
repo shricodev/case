@@ -6,9 +6,9 @@ import (
 	"slices"
 	"strings"
 
-	"github.com/shricodev/case/internal/app"
-	"github.com/shricodev/case/internal/caseconv"
-	"github.com/shricodev/case/internal/walker"
+	"github.com/shricodev/gcase/internal/app"
+	"github.com/shricodev/gcase/internal/caseconv"
+	"github.com/shricodev/gcase/internal/walker"
 )
 
 func Run(opts app.Options) (app.Result, error) {

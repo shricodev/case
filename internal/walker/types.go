@@ -1,6 +1,6 @@
 package walker
 
-import "github.com/shricodev/case/internal/app"
+import "github.com/shricodev/gcase/internal/app"
 
 type Item struct {
 	Path string

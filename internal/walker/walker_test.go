@@ -6,7 +6,7 @@ import (
 	"sort"
 	"testing"
 
-	"github.com/shricodev/case/internal/app"
+	"github.com/shricodev/gcase/internal/app"
 )
 
 func TestIsHiddenUnix(t *testing.T) {

@@ -3,7 +3,7 @@ package cmd
 import (
 	"github.com/spf13/cobra"
 
-	"github.com/shricodev/case/internal/app"
+	"github.com/shricodev/gcase/internal/app"
 )
 
 // lowerCmd represents the lower command

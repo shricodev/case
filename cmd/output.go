@@ -5,7 +5,7 @@ import (
 	"io"
 	"path/filepath"
 
-	"github.com/shricodev/case/internal/app"
+	"github.com/shricodev/gcase/internal/app"
 )
 
 func messageForStatus(status app.ItemStatus) string {

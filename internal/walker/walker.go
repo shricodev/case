@@ -5,7 +5,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/shricodev/case/internal/app"
+	"github.com/shricodev/gcase/internal/app"
 )
 
 func Collect(opts Options) ([]Item, error) {

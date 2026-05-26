@@ -48,7 +48,7 @@ _Small utility to fix my recurring pain of capital and uppercase folders. Nothin
 ## Installation
 
 ```bash
-go install github.com/shricodev/case@latest
+go install github.com/shricodev/gcase@latest
 ```
 
 ---

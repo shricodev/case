@@ -3,7 +3,7 @@ package rename
 import (
 	"testing"
 
-	"github.com/shricodev/case/internal/app"
+	"github.com/shricodev/gcase/internal/app"
 )
 
 func TestSortByDepth(t *testing.T) {

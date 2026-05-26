@@ -1,4 +1,4 @@
-module github.com/shricodev/case
+module github.com/shricodev/gcase
 
 go 1.26.2
 

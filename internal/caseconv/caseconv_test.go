@@ -3,7 +3,7 @@ package caseconv
 import (
 	"testing"
 
-	"github.com/shricodev/case/internal/app"
+	"github.com/shricodev/gcase/internal/app"
 )
 
 func TestApplyMode(t *testing.T) {

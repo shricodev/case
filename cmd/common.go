@@ -3,8 +3,8 @@ package cmd
 import (
 	"github.com/spf13/cobra"
 
-	"github.com/shricodev/case/internal/app"
-	"github.com/shricodev/case/internal/rename"
+	"github.com/shricodev/gcase/internal/app"
+	"github.com/shricodev/gcase/internal/rename"
 )
 
 func runCaseCommand(cmd *cobra.Command, mode app.CaseMode, args []string, opts app.Options) error {
