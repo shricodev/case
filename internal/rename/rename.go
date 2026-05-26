@@ -6,6 +6,7 @@ import (
 	"strings"
 
 	"github.com/shricodev/case/internal/app"
+	"github.com/shricodev/case/internal/caseconv"
 	"github.com/shricodev/case/internal/walker"
 )
 
@@ -42,6 +43,21 @@ func Run(opts app.Options) (app.Result, error) {
 		DryRun: opts.DryRun,
 	}
 
+	for i := range result.Items {
+		item := &result.Items[i]
+		newPath := caseconv.BuildNewPath(item.OldPath, opts.Mode, item.Kind, opts.PreserveExt)
+		item.NewPath = newPath
+
+		if item.OldPath == newPath {
+			item.Status = app.StatusSkipped
+			continue
+		}
+
+		if opts.DryRun {
+			item.Status = app.StatusPlanned
+		}
+	}
+
 	return result, nil
 }
 
@@ -58,6 +74,8 @@ func pathDepth(path string) int {
 	// NOTE: we dont want to use filepath.Separator, as what if the user is in
 	// a windows machine, working in a linux style file system or vice versa?
 	// so this should be safer.
+	// also since we're doing it all locally, and not modifying the real path, this is fine.
+	// and still cross-compatible to all OS even windows.
 	path = strings.ReplaceAll(path, `\`, `/`)
 	path = strings.Trim(path, `/`)
 

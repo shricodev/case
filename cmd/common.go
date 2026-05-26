@@ -1,8 +1,6 @@
 package cmd
 
 import (
-	"fmt"
-
 	"github.com/spf13/cobra"
 
 	"github.com/shricodev/case/internal/app"
@@ -18,7 +16,6 @@ func runCaseCommand(cmd *cobra.Command, mode app.CaseMode, args []string, opts a
 		return err
 	}
 
-	fmt.Printf("sorted result: %+v", result)
-
+	// fmt.Printf("sorted result: %+v\n", result)
 	return printResult(cmd.OutOrStdout(), result)
 }
