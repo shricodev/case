@@ -14,6 +14,9 @@ func Collect(opts Options) ([]Item, error) {
 }
 
 func walk(opts Options) ([]Item, error) {
+	// there's no way to figure out all the paths that's going to come in
+	// so we will use the good old append() without assigning a capacity.
+	// increases the TC but that's fine for now.
 	items := []Item{}
 
 	root := filepath.Clean(opts.Root)
