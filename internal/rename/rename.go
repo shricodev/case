@@ -2,6 +2,7 @@ package rename
 
 import (
 	"fmt"
+	"os"
 	"slices"
 	"strings"
 
@@ -55,6 +56,13 @@ func Run(opts app.Options) (app.Result, error) {
 
 		if opts.DryRun {
 			item.Status = app.StatusPlanned
+		} else {
+			if err := os.Rename(item.OldPath, item.NewPath); err != nil {
+				item.Error = err
+				item.Status = app.StatusFailed
+			} else {
+				item.Status = app.StatusRenamed
+			}
 		}
 	}
 
