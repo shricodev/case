@@ -2,7 +2,7 @@
 
 <img src="https://raw.githubusercontent.com/MariaLetta/free-gophers-pack/master/characters/png/73.png" width="250" alt="Gopher" />
 
-# case
+# gcase
 
 **Rename files and folders by case upper, lower, or capitalize**
 
@@ -17,7 +17,7 @@
 
 _Small utility to fix my recurring pain of capital and uppercase folders. Nothing fancy._
 
-`case` is a CLI tool for bulk-renaming files and directories by changing their case. Point it at a path, pick a mode, and it renames everything with full control over recursion, hidden files, extension preservation, and dry-run previews before touching anything.
+`gcase` is a CLI tool for bulk-renaming files and directories by changing their case. Point it at a path, pick a mode, and it renames everything with full control over recursion, hidden files, extension preservation, and dry-run previews before touching anything.
 
 ---
 
@@ -56,7 +56,7 @@ go install github.com/shricodev/gcase@latest
 ## Usage
 
 ```
-case <command> <path> [flags]
+gcase <command> <path> [flags]
 ```
 
 ---
@@ -88,37 +88,37 @@ case <command> <path> [flags]
 Preview lowercasing all files recursively, without changing anything:
 
 ```bash
-case lower ./myproject --target files --recursive --dry-run
+gcase lower ./myproject --target files --recursive --dry-run
 ```
 
 Uppercase all directory names in the current folder:
 
 ```bash
-case upper . --target dirs
+gcase upper . --target dirs
 ```
 
 Capitalize everything recursively, including hidden files:
 
 ```bash
-case capitalize ./myproject --target all --recursive --include-hidden
+gcase capitalize ./myproject --target all --recursive --include-hidden
 ```
 
 Lowercase file names but keep their extensions untouched:
 
 ```bash
-case lower ./myproject --target files --preserve-extension
+gcase lower ./myproject --target files --preserve-extension
 ```
 
 Rename a single file:
 
 ```bash
-case upper ./docs/README.md
+gcase upper ./docs/README.md
 ```
 
 Full recursive rename of files and dirs, live (no dry-run):
 
 ```bash
-case lower ./myproject --target all --recursive --include-hidden --preserve-extension=false
+gcase lower ./myproject --target all --recursive --include-hidden --preserve-extension=false
 ```
 
 ---

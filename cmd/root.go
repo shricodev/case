@@ -8,9 +8,9 @@ import (
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use:   "case",
+	Use:   "gcase",
 	Short: "Change the 'case' of files and folders",
-	Long:  `'case' is a CLI tool for renaming files and folders by changing their case`,
+	Long:  `'gcase' is a CLI tool for renaming files and folders by changing their case`,
 }
 
 // Execute adds all child commands to the root command and sets flags appropriately.

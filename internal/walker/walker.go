@@ -53,7 +53,7 @@ func walk(opts Options) ([]Item, error) {
 			}
 
 			// Do not collect "." itself.
-			// Example: case lower . -r should not try to rename "."
+			// Example: gcase lower . -r should not try to rename "."
 			if path == root && isCurrentOrParentDir(path) {
 				return nil
 			}

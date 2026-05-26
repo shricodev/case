@@ -1,4 +1,4 @@
-BINARY=case
+BINARY=gcase
 BIN_DIR=bin
 
 build:
