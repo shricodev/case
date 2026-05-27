@@ -6,7 +6,6 @@ import (
 	"github.com/shricodev/gcase/internal/app"
 )
 
-// lowerCmd represents the lower command
 var lowerCmd = &cobra.Command{
 	Use:   "lower <path>",
 	Short: "Rename items to lowercase",

@@ -6,7 +6,6 @@ import (
 	"github.com/shricodev/gcase/internal/app"
 )
 
-// capitalizeCmd represents the capitalize command
 var capitalizeCmd = &cobra.Command{
 	Use:   "capitalize <path>",
 	Short: "Capitalize item names",

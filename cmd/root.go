@@ -6,15 +6,13 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
 	Use:   "gcase",
 	Short: "Change the 'case' of files and folders",
 	Long:  `'gcase' is a CLI tool for renaming files and folders by changing their case`,
 }
 
-// Execute adds all child commands to the root command and sets flags appropriately.
-// This is called by main.main(). It only needs to happen once to the rootCmd.
+// Execute runs the root command and exits on error.
 func Execute() {
 	err := rootCmd.Execute()
 	if err != nil {

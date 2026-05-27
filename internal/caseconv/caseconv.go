@@ -28,6 +28,8 @@ func applyMode(name string, mode app.CaseMode) string {
 	}
 }
 
+// BuildNewPath returns the renamed path for oldPath under mode.
+// When preserveExt is true and kind is KindFile, the extension is left unchanged.
 func BuildNewPath(
 	oldPath string,
 	mode app.CaseMode,

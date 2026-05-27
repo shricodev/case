@@ -8,6 +8,7 @@ import (
 	"github.com/shricodev/gcase/internal/app"
 )
 
+// messageForStatus returns a short human-readable label for status.
 func messageForStatus(status app.ItemStatus) string {
 	switch status {
 	case app.StatusPlanned:
@@ -23,6 +24,7 @@ func messageForStatus(status app.ItemStatus) string {
 	}
 }
 
+// printResult writes a formatted, aligned summary of result to w.
 func printResult(w io.Writer, result app.Result) error {
 	// find the longest label and old base name for alignment
 	maxLabel := 0

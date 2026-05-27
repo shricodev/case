@@ -8,6 +8,7 @@ import (
 	"github.com/shricodev/gcase/internal/app"
 )
 
+// Collect gathers filesystem entries under opts.Root that match opts.
 func Collect(opts Options) ([]Item, error) {
 	opts.Root = filepath.Clean(opts.Root)
 	return walk(opts)

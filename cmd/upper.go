@@ -6,7 +6,6 @@ import (
 	"github.com/shricodev/gcase/internal/app"
 )
 
-// upperCmd represents the upper command
 var upperCmd = &cobra.Command{
 	Use:   "upper <path>",
 	Short: "Rename items to uppercase",

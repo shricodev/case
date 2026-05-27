@@ -11,6 +11,8 @@ import (
 	"github.com/shricodev/gcase/internal/walker"
 )
 
+// Run renames entries under opts.Root according to opts.
+// Returns a Result summarizing every item, and an error if setup fails.
 func Run(opts app.Options) (app.Result, error) {
 	if !opts.Mode.IsValid() {
 		return app.Result{}, fmt.Errorf("invalid mode: %q", opts.Mode)
@@ -69,6 +71,7 @@ func Run(opts app.Options) (app.Result, error) {
 	return result, nil
 }
 
+// sortByDepth sorts items deepest-first so nested entries are renamed before their parents.
 func sortByDepth(items []app.ItemResult) {
 	slices.SortFunc(items, func(x, y app.ItemResult) int {
 		xLen := pathDepth(x.OldPath)

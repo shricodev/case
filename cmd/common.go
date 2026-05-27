@@ -7,6 +7,7 @@ import (
 	"github.com/shricodev/gcase/internal/rename"
 )
 
+// runCaseCommand wires a cobra command to rename.Run for the given mode.
 func runCaseCommand(cmd *cobra.Command, mode app.CaseMode, args []string, opts app.Options) error {
 	opts.Root = args[0]
 	opts.Mode = mode

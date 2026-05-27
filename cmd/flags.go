@@ -8,6 +8,7 @@ import (
 
 var opts app.Options
 
+// addRenameFlags registers the shared rename flags on cmd, storing values in opts.
 func addRenameFlags(cmd *cobra.Command, opts *app.Options) {
 	cmd.Flags().
 		BoolVarP(&opts.DryRun, "dry-run", "n", false, "show what would be renamed without changing anything")
